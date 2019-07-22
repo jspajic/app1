@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+    mysql:  
+      build:
+        context: mysql
+      image: mysqlimg
+      container_name: baza
+      environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      ports:
+      - "33061:3306"
+      volumes:
+      - C:\Users\jspajic\Documents\mysqlBackup:/var/lib/mysql
+
+    app:  
+      build: helloworld
+      image: apphw  
+      container_name : aplikacija
+      ports:
+        - "8080:8080"
+      depends_on:
+       - mysql
