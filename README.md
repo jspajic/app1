@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-These instructions will cover usage information and for the docker container 
+These instructions will cover usage information for the docker container 
 
 ### Prerequisities
 
