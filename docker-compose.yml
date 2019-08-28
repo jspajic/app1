@@ -11,15 +11,30 @@ services:
       ports:
       - "33061:3306"
       volumes:
-      - C:\Users\jspajic\Documents\mysqlBackup:/var/lib/mysql
+      - db-data:/var/lib/mysql
 
-    app:  
+    api:  
       build: helloworld
-      image: apphw  
-      container_name : aplikacija
+      image: hwapi
+      container_name : api
       ports:
         - "8080:8080"
       depends_on:
        - mysql
       volumes:
-       - C:\Users\jspajic\Documents\appLogs:/logs
+       - app-logs:/app/logs
+       - lucene-index:/app/data
+   
+    app:  
+      build: vue
+      image: vueapp  
+      container_name : vueApp
+      ports:
+      - "4000:4000"
+      depends_on:
+       - api
+
+volumes:
+    db-data:
+    app-logs:
+    lucene-index:
