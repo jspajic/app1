@@ -1,4 +1,4 @@
-# app1Beautiful Vue.js app attached to REST API written in Spring Boot.
+# Beautiful Vue.js app attached to REST API written in Spring Boot.
 
 ## Getting Started
 
