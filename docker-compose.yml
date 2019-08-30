@@ -11,7 +11,7 @@ services:
       ports:
       - "33061:3306"
       volumes:
-      - /db-data:/var/lib/mysql
+      - ./db-data:/var/lib/mysql
 
     api:  
       build: helloworld
@@ -22,8 +22,8 @@ services:
       depends_on:
        - mysql
       volumes:
-       - /app-logs:/app/logs
-       - /lucene-index:/app/data
+       - ./app-logs:/logs
+       - ./app-logs/archived:/archived
    
     app:  
       build: vue

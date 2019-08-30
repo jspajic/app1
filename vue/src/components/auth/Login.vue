@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper col-md-6 offset-md-3 mtop">
     <form class="form-signin" v-on:submit.prevent="login">
-      <h3 class="form-signin-heading col-md-6 offset-md-4">Logiraj se!</h3>
-
+      <h3 class="form-signin-heading col-md-6 offset-md-4">Logiraj se!</h3> 
+      <router-link :to="{ name: 'Register' }">Registriraj se!</router-link>
       <input
         type="text"
-        class="form-control form-spacing-top m-top"
+        class="form-control form-spacing-top gap m-top"
         name="username"
         v-model="agent.username"
         placeholder="Korisnicko ime"
@@ -13,12 +13,12 @@
       />
       <input
         type="password"
-        class="form-control form-spacing-top"
+        class="form-control form-spacing-top gap"
         name="password"
         v-model="agent.password"
         placeholder="Sifra"
       />
-      <button class="btn btn-lg btn-primary btn-block form-spacing-top" type="submit">Login</button>
+      <button class="btn btn-lg btn-primary btn-block form-spacing-top gap" type="submit">Login</button>
     
     </form>
   </div>
